@@ -581,8 +581,8 @@ if __name__ == "__main__":
 
     os.makedirs(FLAGS.out_dir, exist_ok=True)
 
-    glctx         = dr.RasterizeGLContext() # Context for training
-    glctx_display = glctx if FLAGS.batch < 16 else dr.RasterizeGLContext() # Context for display
+    glctx         = dr.RasterizeCudaContext() # Context for training
+    glctx_display = glctx if FLAGS.batch < 16 else dr.RasterizeCudaContext() # Context for display
 
     # ==============================================================================================
     #  Create data pipeline
